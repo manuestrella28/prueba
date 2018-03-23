@@ -1,0 +1,130 @@
+// Navbar
+nav {
+   position: fixed;
+   max-height: 70px;
+   background: #5AC9A8;
+   z-index: 1500;
+   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+
+   .nav-item {
+      font-size: 0.7rem;
+
+      .dropdown-menu {
+         a {
+            padding: 0.5em 1em; 
+            text-transform: capitalize;
+
+            &:hover {
+               background: #5AC9A8;
+            }
+         }
+      }
+
+      .nav-link {
+         color: #FFF;
+         
+         &:last-child {
+            display: flex;
+            align-items: center;
+            
+            .user-name {
+               padding-right: 0.5em;
+               font-size: 1.5em;
+            }
+
+            .user-icon {
+               width: 2em;
+               background: #D7D7D7;
+               padding: 1px;
+            }
+         }
+
+         svg {
+            width: 1.5em;
+         }
+
+      }
+   }
+
+   .navbar-toggler {
+      font-size: 0.6rem;
+      background: #ECEEF0;
+   }
+}
+
+@include tablet {
+
+   nav {
+
+      .nav-item {
+         font-size: 1rem;
+
+         .nav-link {
+            padding: 0.5em 1em;
+         }
+      }
+
+      .navbar-toggler {
+         font-size: 1rem;
+      }
+
+   }
+
+}
+
+// Sidebar Menu
+.sidebar-menu {
+   position: fixed;
+   top: 0;
+   left: 0;
+   background: #D7D7D7;
+   width: 300px;
+   height: 100%;
+   z-index: 1000;
+   transform: translateX(-300px);
+   transition: transform 0.3s ease-in-out;
+   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);   
+
+   &.open {
+      transform: translateX(0);
+   }
+
+   ul {
+      width: calc(100% - 2rem);
+      margin: 0 auto;
+      text-align: left;
+      margin-top: 8rem;
+
+      li {
+         padding: 1em 2em;
+         border: 1px solid #EEE;
+         background: #FFF;
+         
+         &:first-child {
+            border-bottom: none;
+         }
+
+         &:hover {
+            background: #5AC9A8;
+            cursor: pointer;
+
+            a {
+               color: #FFF;
+            }
+         }
+
+         &.active {
+            background: #5AC9A8;
+
+            a {
+               color: white;
+            }
+         }
+
+         a {
+            color: #5AC9A8;
+         }
+
+      }
+   }
+}

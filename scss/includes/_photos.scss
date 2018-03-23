@@ -1,0 +1,84 @@
+// Photos Carousel
+#photos-carousel {
+
+   .carousel-caption {
+      background: #D8D8D8;
+      color: #000;
+      font-weight: 600; 
+   }
+
+}
+
+@include tablet {
+
+   #photos-carousel {
+      
+      // Photos Carousel Captions
+      .carousel-caption {
+         bottom: 80px;
+         right: 0;
+         left: 0;
+         background: rgba(0, 0, 0, 0.5);
+         background: #D7D7D7;
+         color: #000;
+         text-transform: capitalize;
+
+         h2 {
+            font-size: 1rem;
+         }
+      }
+
+
+      // Carousel Indicators
+      .carousel-indicators {
+         left: 0;
+         right: 0;
+         bottom: 0;
+         width: 100%;
+         margin: 0;
+         display: flex;
+         justify-content: space-between;
+         background: #BDBDBD;
+         
+         li {
+            position: relative;
+            width: calc(100% / 8);
+            min-height: 70px;
+            margin: 0;
+            padding: 0;
+            text-indent: 0;
+            margin: 5px;
+            opacity: 0.5;
+            transition: opacity 0.3s ease-in-out;
+
+            &:first-child {
+               margin-left: 0;
+            }
+
+            &:last-child {
+               margin-right: 0;
+            }
+
+            &.active {
+               opacity: 1;
+            }
+
+            img {
+               position: absolute;
+               top: 0;
+               right: 0;
+               bottom: 0;
+               left: 0;
+               display: block;
+               object-fit: cover;
+               width: 100%;
+               height: 100%;
+            }
+
+         }
+
+      }
+
+   }
+
+}

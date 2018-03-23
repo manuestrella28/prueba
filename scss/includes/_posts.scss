@@ -1,0 +1,125 @@
+/* News Carousel */
+#news-carousel {
+
+   .carousel-caption {
+      background: rgba(0, 0, 0, 0.6);
+   }
+
+   .carousel-indicators li {
+      background: rgba(255, 255, 255, 0.5);
+
+      &.active {
+         background: #5AC9A8;
+      }
+   }
+
+}
+
+@include minitablet {
+
+   #news-carousel {
+      .carousel-caption h2 {
+         font-size: 1rem;
+      }
+   }
+}
+
+
+@include laptop {
+
+   #news-carousel {
+      padding-right: calc(100% / 3);
+      min-height: 600px;
+   
+      // Carousel Captions
+      .carousel-caption {
+         right: 0;
+         bottom: 0;
+         left: 0;
+         padding: 0;
+         text-align: left;
+         line-height: 1.5;
+         background: none;
+         color: #FFF;
+   
+         h2 {
+            font-size: 1.5rem;
+            padding: 1em;
+            margin: 0;
+            background: rgba(0, 0, 0, 0.6);
+         }
+   
+         p {
+            display: block;
+            font-size: 1rem;
+            padding: 1.5em;
+            margin: 0;
+            color: #000;
+            background: #D7D7D7;
+         }
+   
+         a {
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #000;
+            border-left: 2px solid #000;
+            padding-left: 0.5em;
+            margin-left: 0.5em;
+
+            &:hover {
+               text-decoration: underline;
+            }
+         }
+   
+      }
+   
+      // Carousel Indicators
+      .carousel-indicators {
+         top: 0;
+         right: 0;
+         left: auto;
+         height: 100%;
+         width: calc(100% / 3);
+         margin: 0;
+         padding: 0;
+         flex-direction: column;
+         justify-content: space-between;
+         align-items: center;
+         overflow: hidden;
+         padding-left: 15px;
+   
+         li {
+            width: 100%;
+            height: calc((100% / 6) - 10px);
+            text-indent: 0;
+            display: flex;
+            background: #FFF;
+   
+            img {
+               max-width: 120px;
+               height: auto;
+               display: block;
+            }
+   
+            h2 {
+               display: block;
+               font-size: 0.8em;
+               line-height: 1.4;
+               padding-left: 1em;
+               color: #000;
+            }
+   
+            &.active {
+               background: #ECEEF0;
+            }
+
+         }
+   
+   
+      }
+   
+   }
+
+
+}
+
